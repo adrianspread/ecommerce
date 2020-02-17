@@ -15,7 +15,7 @@ exports.signup = (req, res) => {
 
     user.salt = undefined;
     user.hashed_password = undefined;
-    // console.log("response happening!!!");
+    console.log("response happening!!!");
     res.json({ user });
   });
   // console.log("in signup: ");

@@ -19,11 +19,13 @@ const Signup = () => {
   };
 
   const clickSubmit = event => {
+    console.log("click submit happened");
     event.preventDefault();
     setValues({ ...values, error: false });
     signup({ name, email, password }).then(data => {
       console.log("data in clickSubmit: ", data);
       if (data.error) {
+        console.log("submit error: ", data.error);
         setValues({ ...values, error: data.error, success: false });
       } else {
         setValues({

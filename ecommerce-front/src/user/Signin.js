@@ -1,34 +1,38 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Layout from "../core/Layout";
-import { signin } from "../auth";
+import { signin, authenticate } from "../auth";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: "adiadiadi@adi.com",
+    password: "adiadi1",
     error: "",
     loading: false,
     redirectToReferrer: false
   });
 
-  const { email, password, error, loading, redirectToReferer } = values;
+  const { email, password, error, loading, redirectToReferrer } = values;
 
   const handleChange = name => event => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
   const clickSubmit = event => {
+    console.log("click submit happened");
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password }).then(data => {
       console.log("data in clickSubmit: ", data);
       if (data.error) {
+        console.log("submit error: ", data.error);
         setValues({ ...values, error: data.error, loading: false });
       } else {
-        setValues({
-          ...values,
-          redirectToReferrer: true
+        authenticate(data, () => {
+          setValues({
+            ...values,
+            redirectToReferrer: true
+          });
         });
       }
     });
@@ -77,15 +81,15 @@ const Signin = () => {
     );
 
   const redirectUser = () => {
-    if (redirectToReferer) {
-      console.log("redirect shoult happen!!!");
+    if (redirectToReferrer) {
       return <Redirect to="/" />;
     }
   };
+
   return (
     <Layout
-      title="Signup"
-      description="Signup to Node React E-commerce App"
+      title="Signin"
+      description="Signin to Node React E-commerce App"
       className="container col-md-4 offset-md-4"
     >
       {showLoading()}

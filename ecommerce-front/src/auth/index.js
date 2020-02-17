@@ -1,7 +1,7 @@
 import { API } from "../config";
 
 export const signup = user => {
-  // console.log(user.name, user.email, user.password);
+  console.log("signup!!!!!", user.name, user.email, user.password);
   return fetch(`${API}/signup`, {
     method: "POST",
     headers: {
@@ -11,7 +11,7 @@ export const signup = user => {
     body: JSON.stringify(user)
   })
     .then(response => {
-      // console.log("response from fetch/signup: ", response);
+      console.log("response from fetch/signup: ", response);
       return response.json();
     })
     .catch(err => {
@@ -20,7 +20,7 @@ export const signup = user => {
 };
 
 export const signin = user => {
-  // console.log(user.name, user.email, user.password);
+  console.log("signin!!!!!", user);
   return fetch(`${API}/signin`, {
     method: "POST",
     headers: {
@@ -30,10 +30,44 @@ export const signin = user => {
     body: JSON.stringify(user)
   })
     .then(response => {
-      // console.log("response from fetch/signup: ", response);
+      console.log("response from fetch/signin: ", response);
       return response.json();
     })
     .catch(err => {
       console.log(err);
     });
+};
+
+export const authenticate = (data, next) => {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("jwt", JSON.stringify(data));
+    next();
+  }
+};
+
+export const signout = next => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("jwt");
+    next();
+    return fetch(`${API}/signout`, {
+      method: "GET"
+    })
+      .then(response => {
+        console.log("signout", response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+};
+
+export const isAuthenticated = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt")) {
+    return JSON.parse(localStorage.getItem("jwt"));
+  } else {
+    return false;
+  }
 };
