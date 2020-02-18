@@ -21,7 +21,7 @@ export const createCategory = (userId, token, category) => {
 };
 
 export const createProduct = (userId, token, product) => {
-  console.log("createProduct!!!!!");
+  console.log("product!!!!!");
   return fetch(`${API}/product/create/${userId}`, {
     method: "POST",
     headers: {
@@ -31,10 +31,20 @@ export const createProduct = (userId, token, product) => {
     body: product
   })
     .then(response => {
-      console.log("response from fetch/createProduct: ", response);
+      console.log("response from fetch/product: ", response);
       return response.json();
     })
     .catch(err => {
       console.log(err);
     });
+};
+
+export const getCategories = () => {
+  return fetch(`${API}/categories`, {
+    method: "GET"
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => console.log(err));
 };
