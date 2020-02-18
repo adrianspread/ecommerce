@@ -14,6 +14,7 @@ exports.categoryById = (req, res, next, id) => {
 };
 
 exports.create = (req, res) => {
+  console.log("category create!!!! req.body: ", req.body);
   const category = new Category(req.body);
   // console.log("Category: ", req.body);
   // console.log("category: ", category);
@@ -28,7 +29,7 @@ exports.create = (req, res) => {
         error: errorHandler(err)
       });
     }
-    // console.log("in create category data:", data);
+    console.log("in create category data:", data);
     res.json({ data });
   });
 };
