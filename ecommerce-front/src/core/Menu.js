@@ -15,6 +15,9 @@ const isActiv = (history, path) => {
 const Menu = ({ history }) => (
   <div>
     <ul className="nav nav-tabs bg-success">
+      <li style={{border:"2px solid blue", width: "300px"}}>
+          logo
+      </li>
       <li className="nav-item">
         <Link className="nav-link" to="/" style={isActiv(history, "/")}>
           Home
