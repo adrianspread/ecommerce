@@ -129,7 +129,7 @@ const Shop =() => {
                        {loadMoreButton()}
                    </div>
                 </div>
-                
+
 
             </div>
         </Layout>
