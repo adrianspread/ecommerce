@@ -61,7 +61,7 @@ const Cart = () => {
             <div className="col-6">
                 <h3 className="mb-4">Your card summary</h3>
                 <hr/>
-                <Checkout products={items}/>
+                <Checkout products={items} setRun={setRun}/>
             </div>
         </div>
 
