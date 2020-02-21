@@ -17,7 +17,7 @@ const Cart = () => {
                 console.log(e);
             }
         })();
-    }, []);
+    }, [run]);
 
     console.log("items in state: ", items.length);
     // console.log("getCart: ", getCart());
@@ -33,6 +33,8 @@ const Cart = () => {
                         product={product}
                         showAddToCartButton={false}
                         cartUpdate={true}
+                        setRun={setRun}
+                        run={run}
                     />
                 ))}
             </div>
