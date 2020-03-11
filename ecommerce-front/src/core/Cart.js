@@ -45,14 +45,14 @@ const Cart = () => {
     const noItemsMessage = () => {
         return (
             <h2>
-                Your basket is epty. <br/>
+                Your basket is empty. <br/>
                 <Link to="/shop">Continue Shopping</Link>
             </h2>
         )
     }
 
     return (
-        <Layout title="Shopping Cart" description="Manage products in your cart" className="container-fluid">
+        <Layout title="Shopping Basket" description="Manage your real-world-changing energy in your basket" className="container-fluid">
 
         <div className="row">
             <div className="col-6">

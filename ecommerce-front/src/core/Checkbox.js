@@ -21,13 +21,32 @@ const Checkbox = ({categories, handleFilters}) => {
         handleFilters(newCheckedCategoryId)
     }
 
-    return categories.map((c, i) =>  (
-           <li key={i} className="list-unstyled">
-               <input onClick={handleToggle(c._id)} type="checkbox" value={checked.indexOf(c._id === -1)} className="form-check-input" />
-               <label className="form-check-label">{c.name}</label>
-           </li>
-   ));
+    console.log("categories: ", categories);
+
+    return categories === [] ? (
+        <div>
+          No trees or no internet connection
+        </div>
+    ) : (
+        categories.map((c, i) =>  (
+               <li key={i} className="list-unstyled">
+                   <input onClick={handleToggle(c._id)} type="checkbox" value={checked.indexOf(c._id === -1)} className="form-check-input" />
+                   <label className="form-check-label">{c.name}</label>
+               </li>
+        ))
+    )
+
+
 
 };
 
 export default Checkbox;
+
+
+
+// return categories && categories.map((c, i) =>  (
+//        <li key={i} className="list-unstyled">
+//            <input onClick={handleToggle(c._id)} type="checkbox" value={checked.indexOf(c._id === -1)} className="form-check-input" />
+//            <label className="form-check-label">{c.name}</label>
+//        </li>
+// ));

@@ -103,7 +103,7 @@ const Shop =() => {
 
    // const filters = 1;
     return (
-        <Layout title="Shop Page" description="Plant the trees!" className="container-fluid">
+        <Layout title="Plantation Page" description="Choose which tree you want to plant. Every single tree grabs 6-7kg carbon from the air per year." className="container-fluid">
             <div className="row">
                 <div className="col-3">
                     <h4>Filter by categories</h4>
@@ -117,7 +117,6 @@ const Shop =() => {
                 </div>
 
                 <div className="col-9">
-                   <h2 className="mb-4">Products</h2>
                    <div className="row">
                        {filteredResults.map((product, i) => (
                            <div className="col-4 mb-3"  key={i}>

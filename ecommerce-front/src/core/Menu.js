@@ -6,7 +6,7 @@ import {itemTotal} from "./cartHelpers"
 
 const isActiv = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#ff9900", background: "#ffffff" };
+    return { color: "black", background: "#ffffff" };
   } else {
     return { color: "#ffffff" };
   }
@@ -15,8 +15,8 @@ const isActiv = (history, path) => {
 const Menu = ({ history }) => (
   <div>
     <ul className="nav nav-tabs bg-success">
-      <li style={{border:"2px solid blue", width: "300px"}}>
-          logo
+      <li style={{ display: "flex", width: "65%", justifyContent:"flex-start", alignItems:'center', paddingLeft:"40px", color:"white", fontFamily:"Bowlby One", fontSize:"23px"}}>
+          wetreenow!
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/" style={isActiv(history, "/")}>
@@ -26,13 +26,13 @@ const Menu = ({ history }) => (
 
       <li className="nav-item">
         <Link className="nav-link" to="/shop" style={isActiv(history, "/shop")}>
-          Shop
+          Plantation
         </Link>
       </li>
 
       <li className="nav-item">
         <Link className="nav-link" to="/cart" style={isActiv(history, "/cart")}>
-          Cart <sup><small className="cart-badge">{itemTotal()}</small></sup>
+          Basket <sup><small className="cart-badge">{itemTotal()}</small></sup>
         </Link>
       </li>
 
@@ -69,7 +69,7 @@ const Menu = ({ history }) => (
               to="/signin"
               style={isActiv(history, "/signin")}
             >
-              Signin
+              Login
             </Link>
           </li>
           <li className="nav-item">

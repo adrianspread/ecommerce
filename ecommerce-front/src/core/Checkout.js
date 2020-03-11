@@ -118,7 +118,7 @@ const Checkout = ({products, setRun, run = undefined}) => {
 
     return (
         <div>
-            <h2>Total: ${getTotal()}</h2>
+            <h2>Total: €{getTotal()}</h2>
             {showSuccess(data.successPay)}
             {showError(data.error)}
             {showCheckout(data.success)}

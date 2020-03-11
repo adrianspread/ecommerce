@@ -95,8 +95,8 @@ const Signup = () => {
 
   return (
     <Layout
-      title="Signup"
-      description="Signup to Node React E-commerce App"
+      title="Singup"
+      description="Signup and plant the trees with wetreenow!"
       className="container col-md-4 offset-md-4"
     >
       {showSuccess()}
