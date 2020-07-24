@@ -42,22 +42,28 @@ const Home = () => {
     >
       <Search />
 
-      <h2 className="mb-4">Most Popular</h2>
-      <div className="row">
-        {productsBySell.map((product, i) => (
-          <div className="col-4 mb-3" key={i}>
-            <Card product={product} />
+
+      <h2 className="mb-4" style={{marginLeft: "20px"}}>Most Popular:</h2>
+      <div className="product-search-container">
+          <div className="product-search-container-div">
+            {productsBySell.map((product, i) => (
+              <div className="search-card-container" key={i}>
+                <Card product={product} />
+              </div>
+          ))}
           </div>
-        ))}
       </div>
 
-      <h2 className="mb-4">Newest</h2>
-      <div className="row">
-        {productsByArrival.map((product, i) => (
-          <div className="col-4 mb-3" key={i}>
-            <Card product={product} />
+      <h2 className="mb-4" style={{marginLeft: "20px"}}>Newest:</h2>
+      <div className="product-search-container">
+          <div className="product-search-container-div">
+              {productsByArrival.map((product, i) => (
+                  <div className="search-card-container" key={i}>
+                    <Card product={product} />
+                  </div>
+              ))}
+
           </div>
-        ))}
       </div>
     </Layout>
   );

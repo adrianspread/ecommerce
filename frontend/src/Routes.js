@@ -27,7 +27,7 @@ const Routes = () => {
         <AdminRoute path="/create/category" exact component={AddCategory} />
         <AdminRoute path="/create/product" exact component={AddProduct} />
         <Route exact path="/product/:productId" component={Product} />
-        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/card" component={Cart} />
       </Switch>
     </BrowserRouter>
   );

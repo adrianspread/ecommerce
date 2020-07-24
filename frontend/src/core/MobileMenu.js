@@ -31,7 +31,7 @@ const MobileMenu = (props) => (
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/cart" style={isActiv(props.history, "/cart")}>
+                <Link className="nav-link" to="/card" style={isActiv(props.history, "/card")}>
                   Basket
                   <sup>
                     <small className="cart-badge">{itemTotal()}</small>

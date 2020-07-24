@@ -37,15 +37,15 @@ const Product = props => {
 
     return (
         <Layout title={product && product.name} description={product && product.description && product.description.substring(0, 100)} className="container-fluid">
-            <div className="row">
-                <div className="col-8">
+            <div className="product-continer">
+                <div className="show-product margin">
                     {product && product.description && <Card product={product} showViewProductButton={false}/>}
                 </div>
-                <div className="col-4">
+                <div className="related-product">
                     <h4>Related Products</h4>
                     {relatedProduct.map((p,i)=>(
-                        <div className="mb-3">
-                            <Card key={i} product={p}/>
+                        <div className="mb-3" key={i} >
+                            <Card product={p}/>
                         </div>
                     ))}
                 </div>

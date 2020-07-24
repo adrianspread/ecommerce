@@ -5,6 +5,8 @@ import {getCategories, getFilteredProducts} from "./apiCore";
 import Checkbox from './Checkbox';
 import RadioBox from './RadioBox'
 import {prices} from "./fixedPrices";
+import Arrow from "./images/arrow.svg"
+
 
 const Shop =() => {
     const [myFilters, setMyFilters] =  useState({
@@ -16,8 +18,8 @@ const Shop =() => {
     const [skip, setSkip] = useState(0);
     const [size, setSize] = useState(0);
     const [filteredResults, setFilteredResults] = useState([]);
-
-
+    const [arrowPosition, setArrowPosition] = useState("filters-icon")
+    const [filtersHide, setFiltersHide] = useState("filters");
 
     const init = () => {
       getCategories().then(data => {
@@ -101,25 +103,39 @@ const Shop =() => {
    };
 
 
+const showFilters = () => {
+    setArrowPosition(arrowPosition !== "filters-icon filters-icon-rotate" ? "filters-icon filters-icon-rotate": "filters-icon");
+    setFiltersHide(filtersHide === "filters" ? "filters hide-filters":"filters")
+}
+
    // const filters = 1;
     return (
         <Layout title="Plantation Page" description="Choose which tree you want to plant. Every single tree grabs 6-7kg carbon from the air per year." className="container-fluid">
+            <div className="show-filters">
+                <div style={{width: "40px"}}>
+                    <img src={Arrow} className={arrowPosition} onClick={showFilters}/>
+                </div>
+            </div>
             <div className="row">
-                <div className="col-3">
-                    <h4>Filter by categories</h4>
-                    <ul>
-                        <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, "category")}/>
-                    </ul>
-                    <h4>Filter by price range</h4>
-                    <div>
-                        <RadioBox prices={prices} handleFilters={filters => handleFilters(filters, "price")}/>
+                <div className={filtersHide}>
+                    <div className="filter-div">
+                        <h4>Filter by categories</h4>
+                        <ul>
+                            <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, "category")}/>
+                        </ul>
+                    </div>
+                    <div className="filter-div">
+                        <h4>Filter by price range</h4>
+                        <div>
+                            <RadioBox prices={prices} handleFilters={filters => handleFilters(filters, "price")}/>
+                        </div>
                     </div>
                 </div>
 
-                <div className="col-9">
-                   <div className="row">
+                {/*<div className="col-9">*/}
+                   <div className="search-products-div">
                        {filteredResults.map((product, i) => (
-                           <div className="col-4 mb-3"  key={i}>
+                           <div className="search-card-container"  key={i}>
                                <Card product={product} />
                            </div>
                        ))}
@@ -127,7 +143,7 @@ const Shop =() => {
                    <div style={{display: "flex", width: "100%", justifyContent:"center"}}>
                        {loadMoreButton()}
                    </div>
-                </div>
+                {/*</div>*/}
 
 
             </div>

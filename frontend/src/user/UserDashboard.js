@@ -58,12 +58,12 @@ const Dashboard = () => {
       description={`Hey ${name}!!`}
       className="container-fluid"
     >
-      <div className="row">
-        <div className="col-3">{userLinks()} </div>
-        <div className="col-9">
+      <div className="dashboard-container">
+        <div className="col-9 width">
           {userInfo()}
           {purchaseHistory()}
         </div>
+        <div className="user-links">{userLinks()} </div>
       </div>
     </Layout>
   );

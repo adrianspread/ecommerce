@@ -24,9 +24,9 @@ const Cart = () => {
     const showItems = items => {
         return (
             <div>
-                <h2>
+                <h3>
                     Your basket has {items.length} items.
-                </h2>
+                </h3>
                 {items && items.map((product, i)=>(
                     <Card
                         key={i}
@@ -44,25 +44,26 @@ const Cart = () => {
 
     const noItemsMessage = () => {
         return (
-            <h2>
+            <h3>
                 Your basket is empty. <br/>
                 <Link to="/shop">Continue Shopping</Link>
-            </h2>
+            </h3>
         )
     }
 
     return (
         <Layout title="Shopping Basket" description="Manage your real-world-changing energy in your basket" className="container-fluid">
 
-        <div className="row">
-            <div className="col-6">
-                {items.length > 0 ? showItems(items) : noItemsMessage()}
-            </div>
-            <div className="col-6">
-                <h3 className="mb-4">Your card summary</h3>
+        <div className="card-container">
+            <div className="col-6 margin">
+                <h2 className="mb-4">Your card summary</h2>
                 <hr/>
                 <Checkout products={items} setRun={setRun}/>
             </div>
+            <div className="col-6">
+                {items.length > 0 ? showItems(items) : noItemsMessage()}
+            </div>
+
         </div>
 
         </Layout>

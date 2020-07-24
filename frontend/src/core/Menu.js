@@ -14,7 +14,7 @@ function Menu (props) {
 
     const isActiv = (history, path) => {
       if (history.location.pathname === path) {
-        return { color: "black", background: "#ffffff" };
+        return { color: "black", background: "#ffffff", border: "1px solid white" };
       } else {
         return { color: "#ffffff" };
       }
@@ -48,7 +48,7 @@ function Menu (props) {
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/cart" style={isActiv(history, "/cart")}>
+                    <Link className="nav-link" to="/card" style={isActiv(history, "/card")}>
                       Basket{" "}
                       <sup>
                         <small className="cart-badge">{itemTotal()}</small>

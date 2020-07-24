@@ -67,13 +67,13 @@ const Search = () => {
                <h2 className="mt-4 mb-4">
                    {searchMessage(searched, results)}
                </h2>
-               <div className="row">
-                   {results.map((product, i) => (
-                       <div key={i} className="col-4 mb-3">
-                           <Card product={product} />
-                       </div>
-                       )
-                   )}
+               <div className="product-search-container-div">
+                       {results.map((product, i) => (
+                           <div className="search-card-container">
+                               <Card product={product} key={i} />
+                           </div>
+                           )
+                       )}
                </div>
            </div>
        )
@@ -109,11 +109,11 @@ const Search = () => {
   }
 
     return (
-        <div className="row">
-             <div className="container mb-3">
+        <div className="search-container">
+             <div className="search-bar">
                 {searchForm()}
              </div>
-             <div className="container-fluid mb-3">
+             <div className="product-search-container">
                 {searchedProducts(results)}
              </div>
         </div>
