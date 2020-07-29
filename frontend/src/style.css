@@ -34,10 +34,6 @@ body {
   position: relative;
 }
 
-/* .link {
-  position: absolute;
-} */
-
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
   border-color: transparent;

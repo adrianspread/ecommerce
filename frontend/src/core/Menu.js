@@ -23,10 +23,6 @@ function Menu(props) {
     }
   };
 
-  // borderTop: "2px solid transparent",
-
-  // position: "relative"
-
   return (
     <>
       <MobileMenu move={move} onClick={() => setMove("mobile-menu")} />
