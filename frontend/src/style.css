@@ -18,8 +18,17 @@ body {
   /*////////////////////////////////////////////////////*/
 }
  {
-  /*MENU
+  /*MENU 
 */
+}
+
+.nav-item {
+  border-bottom: 1px solid #28a745;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
 }
 
 .hamburger {
