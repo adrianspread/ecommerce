@@ -15,12 +15,17 @@ function Menu(props) {
       return {
         color: "black",
         background: "#ffffff",
-        border: "1px solid white"
+        borderTop: "3px solid white",
+        boxSizing: "content-box"
       };
     } else {
       return { color: "#ffffff" };
     }
   };
+
+  // borderTop: "2px solid transparent",
+
+  // position: "relative"
 
   return (
     <>
@@ -30,19 +35,23 @@ function Menu(props) {
         style={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           background: "#28A745",
-          height: "43px"
+          height: "43px",
+          margin: "0px",
+          padding: "0px",
+          overflow: "hidden"
         }}
       >
         <div className="logo">wetreenow!</div>
         <ul className="nav nav-tabs bg-success desktop-only">
-          <li className="nav-item">
+          <li className="navitem">
             <Link className="nav-link" to="/" style={isActiv(history, "/")}>
               Home
             </Link>
           </li>
 
-          <li className="nav-item">
+          <li className="navitem">
             <Link
               className="nav-link"
               to="/shop"
@@ -52,7 +61,7 @@ function Menu(props) {
             </Link>
           </li>
 
-          <li className="nav-item">
+          <li className="navitem">
             <Link
               className="nav-link"
               to="/card"
@@ -66,7 +75,7 @@ function Menu(props) {
           </li>
 
           {isAuthenticated() && isAuthenticated().user.role === 0 && (
-            <li className="nav-item">
+            <li className="navitem">
               <Link
                 className="nav-link"
                 to="/user/dashboard"
@@ -78,7 +87,7 @@ function Menu(props) {
           )}
 
           {isAuthenticated() && isAuthenticated().user.role === 1 && (
-            <li className="nav-item">
+            <li className="navitem">
               <Link
                 className="nav-link"
                 to="/admin/dashboard"
@@ -91,7 +100,7 @@ function Menu(props) {
 
           {!isAuthenticated() && (
             <Fragment>
-              <li className="nav-item">
+              <li className="navitem">
                 <Link
                   className="nav-link"
                   to="/signin"
@@ -100,7 +109,7 @@ function Menu(props) {
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="navitem">
                 <Link
                   className="nav-link"
                   to="/signup"
@@ -113,7 +122,7 @@ function Menu(props) {
           )}
           {isAuthenticated() && (
             <>
-              <li className="nav-item">
+              <li className="navitem">
                 <Link
                   className="nav-link"
                   style={{ cursor: "pointer", color: "#ffffff" }}

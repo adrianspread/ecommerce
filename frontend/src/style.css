@@ -22,6 +22,22 @@ body {
 */
 }
 
+.navitem {
+  border: 1px solid #28a745;
+  border-bottom: 1px solid #28a745;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  position: relative;
+}
+
+/* .link {
+  position: absolute;
+} */
+
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
   border-color: transparent;
@@ -37,6 +53,7 @@ body {
 
 .icon {
   width: 30px;
+  margin-bottom: 5px;
 }
 
 .logo {
@@ -49,6 +66,7 @@ body {
   color: white;
   font-family: Bowlby One;
   font-size: 23px;
+  margin-bottom: 5px;
 }
 
 .mobile-menu {
