@@ -26,25 +26,25 @@ Some of the shop features: create account, login, user authentication, search fo
 
 Filter by categories or price range
 
-![img](./images_redme/3.png)
+![img](./images_readme/3.png)
 
 Card summary
 
-![img](./images_redme/4.png)
+![img](./images_readme/4.png)
 
 User Dashboard
 
-![img](./images_redme/5.png)
+![img](./images_readme/5.png)
 
 #Responsiveness
 
 Page is fully responsive.
 
-![img](./images_redme/6.png)
+![img](./images_readme/6.png)
 
-![img](./images_redme/7.png)
+![img](./images_readme/7.png)
 
-![img](./images_redme/8.png)
+![img](./images_readme/8.png)
 
 ---
 
