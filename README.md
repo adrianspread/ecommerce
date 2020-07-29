@@ -2,7 +2,7 @@
 
 Online shop made from scratch with credit card payments.
 
-![img](./images_redme/1.png)
+![img](./images_readme/1.png)
 
 ---
 
@@ -10,7 +10,7 @@ Online shop made from scratch with credit card payments.
 
 React.js, CSS/HTML, Bootstrap
 
-![img](./images_redme/2.png)
+![img](./images_readme/2.png)
 
 ---
 
