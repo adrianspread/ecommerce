@@ -41,7 +41,7 @@ const Card = ({
     const shouldRedirect = redirect => {
         if(redirect) {
             console.log("shouldRedirect true");
-            return <Redirect to="/cart"/>
+            return <Redirect to="/card"/>
         }
     }
 
