@@ -10,8 +10,6 @@ Online shop made from scratch with Braintree(PayPal Company) integration.
 
 React.js, CSS/HTML, Bootstrap
 
-![img](./images_readme/2.png)
-
 ---
 
 ### Backend
