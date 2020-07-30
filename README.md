@@ -1,6 +1,6 @@
 ###Ecommerce
 
-Online shop made from scratch with credit card payments.
+Online shop made from scratch with Braintree(PayPal Company) integration.
 
 ![img](./images_readme/1.png)
 
@@ -22,7 +22,7 @@ Node.js, Express.js, MongoDB. Shop has admin and user routes which gives option 
 
 ###Features
 
-Some of the shop features: create account, login, user authentication, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
+Some of the shop features: create account, login, user authentication based on JWT, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
 
 Filter by categories or price range
 
