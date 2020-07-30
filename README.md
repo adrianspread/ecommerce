@@ -1,4 +1,4 @@
-###Ecommerce
+### Ecommerce
 
 Online shop made from scratch with Braintree(PayPal Company) integration.
 
@@ -6,7 +6,7 @@ Online shop made from scratch with Braintree(PayPal Company) integration.
 
 ---
 
-###Frontend
+### Frontend
 
 React.js, CSS/HTML, Bootstrap
 
@@ -14,13 +14,13 @@ React.js, CSS/HTML, Bootstrap
 
 ---
 
-###Backend
+### Backend
 
 Node.js, Express.js, MongoDB. Shop has admin and user routes which gives option of adding categories and products.
 
 ---
 
-###Features
+### Features
 
 Some of the shop features: create account, login, user authentication based on JWT, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
 
@@ -36,7 +36,7 @@ User Dashboard
 
 ![img](./images_readme/5.png)
 
-#Responsiveness
+### Responsiveness
 
 Page is fully responsive.
 
@@ -48,6 +48,6 @@ Page is fully responsive.
 
 ---
 
-#Future Features
+### Future Features
 
-Edit user profile, purchase history, PayPal payments, manage orders and products by admin.
+Edit user profile, purchase history, PayPal payments, manage orders and products by admin, SSL to secure app.
