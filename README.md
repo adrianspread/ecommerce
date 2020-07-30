@@ -24,7 +24,7 @@ Node.js, Express.js, MongoDB. Shop has admin and user routes which gives option 
 
 Some of the shop features: create account, login, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
 
-Filter by categories or price range
+Filter products by categories or price range
 
 ![img](./images_readme/3.png)
 
