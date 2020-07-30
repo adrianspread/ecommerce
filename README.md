@@ -16,13 +16,13 @@ React.js, CSS/HTML, Bootstrap
 
 ### Backend
 
-Node.js, Express.js, MongoDB. Shop has admin and user routes which gives option of adding categories and products.
+Node.js, Express.js, MongoDB. Shop has admin and user routes which gives option of adding categories and products through the admin dashboard. Authentication is based on JWT.
 
 ---
 
 ### Features
 
-Some of the shop features: create account, login, user authentication based on JWT, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
+Some of the shop features: create account, login, search for products using search bar and category filters or price filters, see most popular products or newest products, add product to card, remove product from card.
 
 Filter by categories or price range
 
