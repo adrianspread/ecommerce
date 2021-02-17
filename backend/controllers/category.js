@@ -14,17 +14,9 @@ exports.categoryById = (req, res, next, id) => {
 };
 
 exports.create = (req, res) => {
-  console.log("category create!!!! req.body: ", req.body);
   const category = new Category(req.body);
-  // console.log("Category: ", req.body);
-  // console.log("category: ", category);
-  //
   category.save((err, data) => {
-    // console.log("in category.save");
-    // console.log("err:", err);
-    // console.log("data:", data);
     if (err) {
-      // console.log("err in create category");
       return res.status(400).json({
         error: errorHandler(err)
       });
@@ -72,7 +64,6 @@ exports.list = (req, res) => {
         error: errorHandler(err)
       });
     }
-    //    console.log("list in category data: ", data);
     res.json(data);
   });
 };

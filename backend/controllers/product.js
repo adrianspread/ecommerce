@@ -23,7 +23,6 @@ exports.read = (req, res) => {
 };
 
 exports.create = (req, res) => {
-  console.log("create product!!!! in controlers");
   let form = new formidable.IncomingForm();
   form.keepExtensions = true;
   form.parse(req, (err, fields, files) => {
@@ -48,14 +47,12 @@ exports.create = (req, res) => {
       });
     }
     let product = new Product(fields);
-    console.log("create!!!! product: ", product);
     if (files.photo) {
       if (files.photo.size > 2000000) {
         return res.status(400).json({
           error: "Image shoult be less than 2mb size"
         });
       }
-      console.log("FILES PHOTO:", files.photo);
 
       product.photo.data = fs.readFileSync(files.photo.path);
       product.photo.contentType = files.photo.type;
@@ -114,14 +111,12 @@ exports.update = (req, res) => {
     let product = req.product;
     product = _.extend(product, fields);
 
-    console.log("create!!!! product: ", product);
     if (files.photo) {
       if (files.photo.size > 2000000) {
         return res.status(400).json({
           error: "Image shoult be less than 2mb size"
         });
       }
-      // console.log("FILES PHOTO:", files.photo);
 
       product.photo.data = fs.readFileSync(files.photo.path);
       product.photo.contentType = files.photo.type;
@@ -153,7 +148,6 @@ exports.list = (req, res) => {
     .sort([[sortBy, order]])
     .limit(limit)
     .exec((err, products) => {
-      console.log("err in list products all", err);
       if (err) {
         return res.status(400).json({
           error: "Products not found"
@@ -202,9 +196,7 @@ exports.listBySearch = (req, res) => {
   let skip = parseInt(req.body.skip);
   let findArgs = {};
 
-  // console.log(order, sortBy, limit, skip, req.body.filters);
-  // console.log("findArgs", findArgs);
-
+ 
   for (let key in req.body.filters) {
     if (req.body.filters[key].length > 0) {
       if (key === "price") {

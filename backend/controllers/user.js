@@ -8,7 +8,6 @@ exports.userById = (req, res, next, id) => {
         error: "User not found"
       });
     }
-    // console.log("userById, user ", user);
     req.profile = user;
     next();
   });

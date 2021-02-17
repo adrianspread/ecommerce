@@ -20,7 +20,6 @@ exports.generateToken = (req, res) => {
 };
 
 exports.processPayment = (req, res) => {
-    console.log("in processPayment!!!!");
     let nonceFromTheClient = req.body.paymentMethodNonce;
     let amountFromTheClient = req.body.amount;
     // charge
@@ -36,7 +35,6 @@ exports.processPayment = (req, res) => {
             if (error) {
                 res.status(500).json(error);
             } else {
-                console.log("in processPayment!!!! result: ", result);
                 res.json(result);
             }
         }

@@ -44,13 +44,11 @@ const userSchema = new mongoose.Schema(
 userSchema
   .virtual("password")
   .set(function(password) {
-    console.log("password in userSchema: ", password);
     this._password = password;
     this.salt = uuidv1();
     this.hashed_password = this.encryptPassword(password);
   })
   .get(function() {
-    console.log("this._password:", this._password);
     return this._password;
   });
 

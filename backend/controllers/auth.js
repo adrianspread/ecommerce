@@ -9,17 +9,14 @@ exports.signup = (req, res) => {
   console.log("const user: ", user);
   user.save((err, user) => {
     if (err) {
-      console.log("err in user.save: ", err);
       return res.status(400).json({ err: errorHandler(err) });
     }
 
     user.salt = undefined;
     user.hashed_password = undefined;
-    console.log("response happening!!!");
+
     res.json({ user });
   });
-  // console.log("in signup: ");
-  // res.json({ success: true });
 };
 
 exports.signin = (req, res) => {

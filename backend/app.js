@@ -14,10 +14,8 @@ const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const braintreeRoutes = require("./routes/braintree");
-// app
 const app = express();
 
-//db//MONGO ONLINE
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true
@@ -27,13 +25,6 @@ mongoose
 mongoose.connection.on("error", err => {
   console.log(`ONLINE DB CONNECTION ERROR: ${err.message}`);
 });
-//db locally
-// mongoose
-//   .connect(process.env.DATABASE, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-//   })
-//   .then(() => console.log("DB CONNECTED!!!!"));
 
 //middlewares
 app.use(morgan("dev"));
